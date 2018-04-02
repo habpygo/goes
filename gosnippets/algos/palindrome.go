@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func isPalindrome(s string) bool {
+	for i := range s {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+func main() {
+	testString := "HallaH"
+	if isPalindrome(testString) {
+		fmt.Println("We found a palindrome")
+	}
+}

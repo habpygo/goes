@@ -1,0 +1,38 @@
+[
+{
+    "Name": "Harry Boer",
+    "Account": 12345,
+    "Address": {
+        "Street": "Some street",
+        "Number": 23,
+        "City": "Amersfoort"
+    }
+},
+{
+    "Name": "Gait Boer",
+    "Account": 45783,
+    "Address": {
+        "Street": "Gardner street",
+        "Number": 86,
+        "City": "Melbourne"
+    }
+},
+{
+    "Name": "Monty Python",
+    "Account": 25745,
+    "Address": {
+        "Street": "Go street",
+        "Number": 67,
+        "City": "Google"
+    }
+},
+{
+    "Name": "Daniel de Bre",
+    "Account": 9876788,
+    "Address": {
+        "Street": "Breestreet",
+        "nNumber": 99,
+        "City": "Johannesburg"
+    }
+}
+]

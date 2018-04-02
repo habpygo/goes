@@ -1,0 +1,21 @@
+<!-- forms.html -->
+{{define "body"}}
+{{if .Success}}
+	<h1>Bank Account Added</h1>
+{{else}}
+	<h1>Bank Account</h1>
+	<form method="POST">
+		<label>Name:</label><br />
+		<input type="text" name="name"><br />
+		<label>Account Number:</label><br />
+		<input type="text" name="accountnumber"><br />
+		<label>Street:</label><br />
+        <input type="text" name="street"></textarea><br />
+        <label>Number:</label><br />
+        <input type="text" name="number"></textarea><br />
+        <label>City:</label><br />
+		<input type="text" name="city"></textarea><br />
+		<input type="submit">
+	</form>
+{{end}}
+{{end}}

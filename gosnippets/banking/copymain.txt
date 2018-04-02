@@ -1,0 +1,101 @@
+// package main
+
+// import (
+// 	"TheGoProgrammingLanguage/gosnippets/banking/bankaccounts"
+// 	"encoding/json"
+// 	"fmt"
+// 	"io/ioutil"
+// 	"log"
+// 	"os"
+// )
+
+// type Identification struct {
+// 	ID    string
+// 	Phone int64
+// 	Email string
+// }
+
+// func main() {
+
+// 	var newaccount = []byte(`{"name": "Pipo de Clown", "accountnumber":9675, "street": "Circus straat", "Housenumber": "457", "City": "Snuffie Stad"}`)
+// 	//var newaccount = []byte(`{"name": "Mama Lou", "accountnumber":74995, "street": "Lou Street", "Housenumber": "7", "City": "Clown Stad"}`)
+
+// 	bankaccount := bankaccounts.Bankaccount{}
+// 	err := json.Unmarshal([]byte(newaccount), &bankaccount)
+// 	if err != nil {
+// 		log.Fatal("ledger was not properly unmarshaled:", err)
+// 	}
+
+// 	bankaccountJson, _ := json.Marshal(bankaccount)
+
+// 	writeErr := ioutil.WriteFile("bankledger.json", bankaccountJson, 0644)
+// 	if writeErr != nil {
+// 		log.Fatal("Could not write to JSON file: ", writeErr)
+// 	}
+
+// 	//                 WRITE FILE                       //
+// 	// =================================================//
+// 	//                 READ FILE                        //
+
+// 	jsonLedger, err := os.Open("bankledger.json")
+// 	if err != nil {
+// 		log.Fatal("could not decode bytefile: ", err)
+// 	}
+// 	//defer jsonLedger.Close()
+
+// 	// read the opened xmlFile as a byte array
+// 	byteValue, _ := ioutil.ReadAll(jsonLedger)
+// 	// create new bankAccount variable
+// 	bankAccount := bankaccounts.Bankaccount{}
+// 	// unmarshal it and put it at the address
+// 	json.Unmarshal(byteValue, &bankAccount)
+
+// 	addedAccount := bankaccounts.Bankaccount{}
+
+// 	addedAccount.Name = bankAccount.Name
+// 	addedAccount.AccountNumber = bankAccount.AccountNumber
+// 	addedAccount.Address.Street = bankAccount.Address.Street
+// 	addedAccount.Address.HouseNumber = bankAccount.Address.HouseNumber
+// 	addedAccount.City = bankAccount.Address.City
+
+// 	bankaccounts.Cl.AddAccountToLedger(&addedAccount)
+// 	//json.Unmarshal(byteValue, &cl)
+
+// 	//for i := 0; i < len(bankAccount); i++ {
+// 	fmt.Println("Name: ", bankAccount.Name)
+// 	fmt.Println("Account: ", bankAccount.AccountNumber)
+// 	fmt.Println("Housenumber: ", bankAccount.Address.HouseNumber)
+// 	fmt.Println("Street name: ", bankAccount.Address.Street)
+// 	fmt.Println("City: ", bankAccount.Address.City)
+// 	//}
+// 	fmt.Printf("The updated ledger now is: %s ", bankaccounts.Cl)
+
+// 	var jsonText = []byte(`[
+//         {"ID": "ID1", "Phone": 0, "Email": "email@email.com"}
+//     ]`)
+
+// 	// define slice of Identification
+// 	var idents []Identification
+
+// 	// Unmarshall it
+// 	if err := json.Unmarshal([]byte(jsonText), &idents); err != nil {
+// 		log.Println(err)
+// 	}
+
+// 	idents = append(idents, Identification{ID: "ID2", Phone: 15555555555, Email: "Email"})
+
+// 	// iterating it
+// 	for _, v := range idents {
+// 		fmt.Println(v)
+// 	}
+// 	fmt.Println()
+
+// 	// now Marshal it
+// 	result, err := json.Marshal(idents)
+// 	if err != nil {
+// 		log.Println(err)
+// 	}
+
+// 	// now result has your targeted JSON structure
+// 	fmt.Println(string(result))
+// }
