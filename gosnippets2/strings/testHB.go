@@ -14,5 +14,7 @@ func main() {
 	a = "twello"
 
 	fmt.Println("a is: ", b)
+	fmt.Println(string(65))     // "A", not "65"
+	fmt.Println(string(0x4eac)) //
 
 }

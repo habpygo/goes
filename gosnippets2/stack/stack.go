@@ -16,14 +16,11 @@ func createStack() []int {
 }
 
 func pushOnStack(i int, st []int) []int {
-	stack := st
-	stack = append(st, i)
-
-	return stack
+	st = append(st, i)
+	return st
 }
 
 func popFromStack(st []int) []int {
-	stack := st
-	stack = stack[0:len(stack)]
-	return stack
+	st = st[0:len(st)] // up to, but not including len(st)
+	return st
 }
